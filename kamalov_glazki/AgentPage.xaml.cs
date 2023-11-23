@@ -194,10 +194,7 @@ namespace kamalov_glazki
 
 
 
-        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            UpdateAgents();
-        }
+        
 
         private void ComboSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -232,11 +229,24 @@ namespace kamalov_glazki
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new AddEditPage((sender as Button).DataContext as Agent));
+            UpdateAgents();
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new AddEditPage(null));
+            UpdateAgents();
+        }
+
+        private void Page_IsVisibleChanged_1(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                Kamalov_Entities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                AgentListView.ItemsSource = Kamalov_Entities.GetContext().Agent.ToList();
+            }
+            
+            UpdateAgents();
         }
     }
 }

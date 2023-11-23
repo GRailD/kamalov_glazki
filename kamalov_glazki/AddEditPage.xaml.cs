@@ -69,7 +69,7 @@ namespace kamalov_glazki
                 string ph = _currentAgent.Phone.Replace("(", "").Replace("-", "").Replace("+", "");
                 if (((ph[1] == '9' || ph[1] == '4' || ph[1] == '8') && ph.Length != 11)
                 || (ph[1] == '3' && ph.Length != 12))
-                    errors.AppendLine("Уканите правильно телефон агента");
+                    errors.AppendLine("Укажите правильно телефон агента");
                 if (string.IsNullOrWhiteSpace(_currentAgent.Email)) errors.AppendLine("Укажите почту агента");
                 if (errors.Length > 6)
                 {
@@ -92,6 +92,7 @@ namespace kamalov_glazki
                 {
                     MessageBox.Show(ex.Message.ToString());
                 }
+               
             }
         }
 
