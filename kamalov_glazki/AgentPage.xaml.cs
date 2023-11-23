@@ -168,31 +168,31 @@ namespace kamalov_glazki
                 }
             }
 
-            ////if (Ifupdate)
-            ////{
-            ////    PageListBox.Items.Clear();
+            if (Ifupdate)
+            {
+                PageListBox.Items.Clear();
 
-            ////    for (int i = 1; i <= CountPage; i++)
-            ////    {
-            ////        PageListBox.Items.Add(i);
-            ////    }
-            ////    PageListBox.SelectedIndex = CurrentPage;
+                for (int i = 1; i <= CountPage; i++)
+                {
+                    PageListBox.Items.Add(i);
+                }
+                PageListBox.SelectedIndex = CurrentPage;
 
-            ////    min = CurrentPage * 10 + 10 < CountRecords ? CurrentPage * 10 + 10 : CountRecords;
-            ////    TBCount.Text = min.ToString();
-            ////    TBAllRecords.Text = " из " + CountRecords.ToString();
-            ////    AgentListView.ItemsSource = CurrentPageList;
+                min = CurrentPage * 10 + 10 < CountRecords ? CurrentPage * 10 + 10 : CountRecords;
+                TBCount.Text = min.ToString();
+                TBAllRecords.Text = " из " + CountRecords.ToString();
+                AgentListView.ItemsSource = CurrentPageList;
 
-            ////    AgentListView.Items.Refresh();
-            ////}
+                AgentListView.Items.Refresh();
+            }
 
         }
 
-      
 
-        
 
-       
+
+
+
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
@@ -219,10 +219,10 @@ namespace kamalov_glazki
             ChangePage(1, null);
         }
 
-        //private void PageListBox_MouseUp(object sender, MouseButtonEventArgs e)
-        //{
-        //    ChangePage(0, Convert.ToInt32(PageListBox.SelectedIndex.ToString()));
-        //}
+        private void PageListBox_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            ChangePage(0, Convert.ToInt32(PageListBox.SelectedIndex.ToString()));
+        }
 
         private void RightDirButton_Click(object sender, RoutedEventArgs e)
         {

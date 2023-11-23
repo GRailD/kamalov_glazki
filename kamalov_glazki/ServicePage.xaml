@@ -85,21 +85,21 @@
             </ListView.ItemTemplate>
         </ListView>
         <!--<Button Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Content="Добавить агента" Name="AddButton" Click="AddButton_Click" Margin="10,5,0,0" VerticalAlignment="Top"></Button>-->
-        <!--<StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
             <TextBlock Name="TBCount" FontSize="20" Height="20"></TextBlock>
             <TextBlock Name="TBAllRecords" FontSize="20" Height="20"></TextBlock>
-            --><!--<Button x:Name="LeftDirButton" Content="&lt;" Width="20" Height="20" Click="LeftDirButton_Click" Margin="5,8,5,7"/>-->
+            <Button x:Name="LeftDirButton" Content="&lt;" Width="20" Height="20" Click="LeftDirButton_Click" Margin="5"/>
 
-            <!--<ListBox FontSize="20" Name="PageListBox" MouseUp="PageListBox_MouseUp">
+            <ListBox FontSize="20" Name="PageListBox" MouseUp="PageListBox_MouseUp">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel Orientation="Horizontal"></WrapPanel>
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
-            </ListBox>-->
+            </ListBox>
 
-            <!--<Button Name="RightDirButton" Content="&gt;" Width="20" Height="20" Click="RightDirButton_Click"></Button>--><!--
-        </StackPanel>-->
+            <Button Name="RightDirButton" Content="&gt;" Width="20" Height="20" Click="RightDirButton_Click"></Button>
+        </StackPanel>
 
     </Grid>
 </Page>
